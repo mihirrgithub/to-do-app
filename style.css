@@ -25,18 +25,61 @@ h1 {
   letter-spacing: 1px;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
-
 p {
   color: #e0e0e0;
   margin-bottom: 25px;
   font-size: 1rem;
 }
 
+/* AI Configuration */
+.ai-config {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+}
+
+#api-key-input {
+  width: 250px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#save-key-btn {
+  padding: 8px 16px;
+  background: #50fa7b;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#save-key-btn:hover {
+  background: #6dff98;
+  transform: scale(1.05);
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
 /* Input & Button Container */
 #todo-input {
   width: 320px;
   padding: 10px 14px;
-  margin: 20px 0;
+  margin: 0;
   border-radius: 8px;
   border: none;
   outline: none;
@@ -52,7 +95,7 @@ p {
 
 /* Add Button */
 #add-btn {
-  margin-left: 10px;
+  margin-left: 0;
   padding: 10px 20px;
   background: #4e54c8;
   color: #fff;
@@ -70,10 +113,45 @@ p {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 
+/* AI Suggestions */
+#ai-suggestions {
+  width: 360px;
+  max-height: 150px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.suggestion-item {
+  padding: 8px 12px;
+  color: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Category Badge */
+.category-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 /* Todo List Container */
 #todo-list {
   list-style: none;
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 0;
   width: 360px;
   background: rgba(255, 255, 255, 0.15);
@@ -135,7 +213,7 @@ p {
 }
 
 /* Completed Todo Animation */
-#todo-list li input[type="checkbox"]:checked + span {
+#todo-list li input[type="checkbox":checked + span {
   text-decoration: line-through;
   color: #b0b0b0;
   transition: all 0.3s ease;
@@ -162,10 +240,32 @@ p {
   body {
     padding-top: 50px;
   }
-  #todo-input {
-    width: 200px;
+  
+  .ai-config {
+    flex-direction: column;
   }
+  
+  #api-key-input {
+    width: 100%;
+  }
+  
+  .input-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  #todo-input {
+    width: 100%;
+  }
+  
+  #ai-suggestions {
+    width: 100%;
+    max-width: 300px;
+  }
+  
   #todo-list {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
   }
 }
